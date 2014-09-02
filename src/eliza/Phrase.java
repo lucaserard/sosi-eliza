@@ -22,7 +22,9 @@ public class Phrase{
 	return TypePhrase.AFFIRMATIVE;
     }
 
-    
+    public boolean estPresent(Mot mot){
+	return lesMots.contains(mot);
+    }
     
     public boolean estNegative(){
 	if((this.lesMots.contains(new Mot("ne")))||(this.lesMots.contains(new Mot("pas")))||(this.lesMots.contains(new Mot("n")))){
@@ -31,6 +33,7 @@ public class Phrase{
 	return false;
     }
 
+    
     public Mot[] obtenirMots(){
 	return (Mot[])lesMots.toArray();
     }
