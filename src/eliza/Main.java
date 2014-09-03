@@ -26,7 +26,7 @@ public class Main {
 	    if(phrase!=null){	
                 phrase=phrase.toLowerCase();
 		reponse=bot.trouverReponse(new Phrase(phrase));
-                System.out.println(reponse);
+		System.out.println(reponse);
 		
             }
             
