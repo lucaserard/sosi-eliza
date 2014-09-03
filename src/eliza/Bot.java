@@ -24,34 +24,28 @@ public class Bot{
 	    switch(i){
 	    case 1 : res= "En es-tu sur ?"; break;
 	    case 2 : res= "En es-tu certain ?"; break;
-	    case 3 : res = "Developpe, exprime le fond de ta pensee"; break;
+	    case 3 : res = "Pourquoi cela ?"; break;
 	    }
+	    return res;
 	}
 	
 
 	Mot sujet = trouverSujet(zbeul);
-	System.out.println(sujet.getString());
+	//System.out.println(sujet.getString()); /*fonctionne bien et renvois majoritairement des "ta mere"*/
 	
-	if (sujet!=null){
+	if (sujet==null){
 	     i=(int)Math.round(Math.random()*4);
 	    
 	    switch(i){
-	    case 1 : res = "Je ne suis pas sur de tout comprendre, peux-tu developper ?";break;
-	    case 2 : res = "Developpe le fond de ta pensee."; break;
-	    case 3 : res =  "Dis m'en plus, c'est tres interessant."; break;
-	    case 4 : res = "Le penses-tu vraiment ?"; break;
+	    	case 1 : res = "Je ne suis pas sur de tout comprendre, peux-tu developper ?";break;
+	    	case 2 : res = "Developpe le fond de ta pensee."; break;
+	    	case 3 : res =  "Dis m'en plus, c'est tres interessant."; break;
+	    	case 4 : res = "Le penses-tu vraiment ?"; break;
 	    }
+	    return res;
 	}
-	   
-	
-
 
 	return res;
-
-
-
-		
-	
     }
 
     public String trouverReponse(String phrase){

@@ -47,6 +47,12 @@ public class Phrase{
 	return (Mot[])lesMots.toArray();
     }
 
-
+    public String toString(){
+    	StringBuilder str=new StringBuilder();
+    	for(Mot i : lesMots){
+			str.append(i);
+	    }
+	    return str.toString();
+    }
 }
 
