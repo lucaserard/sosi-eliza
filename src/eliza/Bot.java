@@ -50,6 +50,7 @@ public class Bot{
     }
 
     private Mot trouverSujet(Phrase zbeul){
+	
 	if((zbeul.estPresent(new Mot("Je")))||(zbeul.estPresent(new Mot("J"))))
 	    return (new Mot("Tu"));
 	if(zbeul.estPresent(new Mot("Tu"))||zbeul.estPresent(new Mot("T")))

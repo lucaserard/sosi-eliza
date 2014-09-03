@@ -24,8 +24,10 @@ public class Main {
             //if(buff.readLine()!=null){
                 phrase=buff.readLine(); 
                 phrase=phrase.toLowerCase();
-                reponse=bot.trouverReponse(new Phrase(phrase));
-                System.out.println(reponse);
+                
+		//reponse=bot.trouverReponse(new Phrase(phrase));
+                Phrase rep = new Phrase(phrase);
+		//System.out.println(reponse);
            // }
             
         }

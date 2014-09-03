@@ -4,15 +4,18 @@ import java.util.*;
 
 public class Phrase{
     public enum TypePhrase {AFFIRMATIVE,INTERROGATIVE};
-    private ArrayList<Mot> lesMots;
+    private ArrayList<Mot> lesMots = new ArrayList<Mot>();
     private char ponct;
         
     public Phrase(String laPhrase){
-	String[] mots  = laPhrase.split(" ");
+	String[] mots  = laPhrase.split("\\s");
+	
 	for(String i : mots){
-	    lesMots.add(new Mot(i));
+	    
+	    Mot mot = new Mot(i);
+	    lesMots.add(mot);
 	}	
-	ponct = laPhrase.charAt(laPhrase.length());
+	ponct = laPhrase.charAt(laPhrase.length()-1);
     }
   
     public TypePhrase obtenirType(){	
