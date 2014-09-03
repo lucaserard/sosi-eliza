@@ -3,17 +3,20 @@ package eliza;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+import eliza.Bot;
+import eliza.Phrase;
 
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
+		Bot bot = new Bot("Elisoa");
+
+        BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Bonjour, je m'appelle Elisoa !");
 
         String phrase;
-
+        String reponse;
         Boolean fin=true;
 
         while(fin){
@@ -21,20 +24,12 @@ public class Main {
             //if(buff.readLine()!=null){
                 phrase=buff.readLine(); 
                 phrase=phrase.toLowerCase();
-                System.out.println(repondre(phrase));
+                reponse=bot.trouverReponse(new Phrase(phrase));
+                System.out.println(reponse);
            // }
             
         }
 
 	}
-	
-	private static String repondre(String ph){
-        if(ph!=null){
-            return ph;
-        }
-        else{
-            return"fail";
-        }
-    }
 
 }
