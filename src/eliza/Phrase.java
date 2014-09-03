@@ -10,8 +10,7 @@ public class Phrase{
     public Phrase(String laPhrase){
 	String[] mots  = laPhrase.split("\\s");
 	
-	for(String i : mots){
-	    
+	for(String i : mots){   
 	    Mot mot = new Mot(i);
 	    lesMots.add(mot);
 	}	
@@ -26,7 +25,14 @@ public class Phrase{
     }
 
     public boolean estPresent(Mot mot){
-	return lesMots.contains(mot);
+	
+	for(Mot i : lesMots){
+	    if(i.getString().equals(mot.getString())){
+		return true;
+	    }
+	}
+	
+	return false;
     }
     
     public boolean estNegative(){

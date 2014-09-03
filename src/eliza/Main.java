@@ -8,9 +8,9 @@ import eliza.Phrase;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException {
-		Bot bot = new Bot("Elisoa");
-
+    public static void main(String[] args) throws IOException {
+	Bot bot = new Bot("Elisoa");
+	
         BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Bonjour, je m'appelle Elisoa !");
@@ -21,17 +21,17 @@ public class Main {
 
         while(fin){
 
-            //if(buff.readLine()!=null){
-                phrase=buff.readLine(); 
+	    phrase=buff.readLine();
+            
+	    if(phrase!=null){	
                 phrase=phrase.toLowerCase();
-                
-		//reponse=bot.trouverReponse(new Phrase(phrase));
-                Phrase rep = new Phrase(phrase);
-		//System.out.println(reponse);
-           // }
+		reponse=bot.trouverReponse(new Phrase(phrase));
+                System.out.println(reponse);
+		
+            }
             
         }
-
-	}
+	
+    }
 
 }
