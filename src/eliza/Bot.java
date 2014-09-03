@@ -64,7 +64,7 @@ public class Bot{
 	if(zbeul.estPresent(new Mot("tu"))||zbeul.estPresent(new Mot("t"))){
 	    return (new Mot("je"));
 	}
-	return new Mot("TaMere");
+	return new Mot("Ta mere");
     }
     
     private Boolean trouverOuiNon(Phrase zbeul){
