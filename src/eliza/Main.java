@@ -1,4 +1,6 @@
+package eliza;
 
+import eliza.ElInterface;
 
 public class Main {
 	private static ElInterface interf;
