@@ -19,6 +19,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import eliza.Bot;
 
 public class ElInterface extends JFrame {
 
@@ -28,13 +29,14 @@ public class ElInterface extends JFrame {
 	private JTextArea chat;
 	private DefaultCaret caret;
 	private static String history="Elisoa : Bonjour ! Je m'appelle Elisoa."+'\n'+'\r';
-
+	private Bot bot;
 	public static void main(String[] args){
 		
 	}
 	
 	public ElInterface() {
 		setTitle("Elisoa");
+		bot=new Bot("Elisoa");
 		createWindow();
 		
 	}
@@ -131,7 +133,7 @@ public class ElInterface extends JFrame {
 	
 	private String repond(String text){
 		if(text!=null){
-            return text.toLowerCase();
+            return bot.trouverReponse(text.toLowerCase());
         }
         else{
             return"fail";
