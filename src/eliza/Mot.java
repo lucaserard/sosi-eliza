@@ -11,4 +11,8 @@ public class Mot{
 	return leMot;
     }
 
+    public boolean equals(Mot mot){
+    	return this.leMot==mot.getString();
+    }
+
 }
