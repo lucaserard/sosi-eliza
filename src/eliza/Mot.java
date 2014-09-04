@@ -15,4 +15,11 @@ public class Mot{
     	return this.leMot==mot.getString();
     }
 
+    public void retirerDernierCaractere(){
+        leMot=leMot.substring(0,leMot.length()-2);
+    }
+
+    public void ajouterCaractere(char c){
+        leMot=leMot+c;
+    }
 }

@@ -39,9 +39,20 @@ public class Bot{
 
 
 	if((zbeul.obtenirType()==Phrase.TypePhrase.INTERROGATIVE)&&( sujet.equals(new Mot("je")) )){
-		return "Nous ne sommes pas a MA seance chez le psy !";
+		return "Nous ne sommes pas a MA seance chez le psy ! Parlons plutot de toi.";
 	}else if(zbeul.obtenirType()==Phrase.TypePhrase.INTERROGATIVE){
 		return "Pourquoi te poses-tu tant de questions ?";
+	}
+
+	if((zbeul.obtenirType()==Phrase.TypePhrase.AFFIRMATIVE)&&( sujet.equals(new Mot("tu")) )){
+		Phrase rep = new Phrase('?');
+		Mot verbe = zbeul.obtenirMotSuivant(new Mot("je"));
+		verbe.ajouterCaractere('s');
+		rep.ajouterMot(new Mot("Pourquoi"));
+		rep.ajouterMot(verbe);
+		rep.ajouterMot(sujet);
+
+		return rep.toString();
 	}
 
 	if (sujet==null){
