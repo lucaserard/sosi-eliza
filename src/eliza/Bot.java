@@ -12,7 +12,7 @@ public class Bot{
     }
 
     public String trouverReponse(Phrase zbeul){
-	String  res= "Je ne comprend pas.";
+	String  res= "Je comprend...";
 	
 	Boolean ouiNon = trouverOuiNon(zbeul);
 	
