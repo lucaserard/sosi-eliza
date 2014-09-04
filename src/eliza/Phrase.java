@@ -13,9 +13,9 @@ public class Phrase{
 
 	ponct = laPhrase.charAt(laPhrase.length()-1);
 	if ((ponct=='.' )||(ponct =='!')||(ponct =='?')){
-		mots  = (laPhrase.substring(0,laPhrase.length()-1)).split("\\s");
+	    mots  = (laPhrase.substring(0,laPhrase.length()-1)).split("\\s");
 	}else{
-		mots  = laPhrase.split("\\s");		
+	    mots  = laPhrase.split("\\s");		
 	}
 	for(String i : mots){   
 	    Mot mot = new Mot(i);
@@ -42,10 +42,7 @@ public class Phrase{
     }
     
     public boolean estNegative(){
-	if((this.lesMots.contains(new Mot("ne")))||(this.lesMots.contains(new Mot("pas")))||(this.lesMots.contains(new Mot("n")))){
-	    return true;
-	}
-	return false;
+	return ((this.lesMots.contains(new Mot("ne")))||(this.lesMots.contains(new Mot("pas")))||(this.lesMots.contains(new Mot("n"))));
     }
 
     
@@ -56,9 +53,9 @@ public class Phrase{
     public String toString(){
     	StringBuilder str=new StringBuilder();
     	for(Mot i : lesMots){
-			str.append(i);
-	    }
-	    return str.toString();
+	    str.append(i);
+	}
+	return str.toString();
     }
 }
 
