@@ -8,13 +8,19 @@ public class Phrase{
     private char ponct;
         
     public Phrase(String laPhrase){
-	String[] mots  = laPhrase.split("\\s");
+	String[] mots;
 	
+
+	ponct = laPhrase.charAt(laPhrase.length()-1);
+	if ((ponct=='.' )||(ponct =='!')||(ponct =='?')){
+		mots  = (laPhrase.substring(0,laPhrase.length()-1)).split("\\s");
+	}else{
+		mots  = laPhrase.split("\\s");		
+	}
 	for(String i : mots){   
 	    Mot mot = new Mot(i);
 	    lesMots.add(mot);
-	}	
-	ponct = laPhrase.charAt(laPhrase.length()-1);
+	}		
     }
   
     public TypePhrase obtenirType(){	

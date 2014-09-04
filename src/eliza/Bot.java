@@ -29,7 +29,7 @@ public class Bot{
 	    return res;
 	}
 	
-	if(zbeul.estPresent(new Mot("bonjour"))){
+	if((zbeul.estPresent(new Mot("bonjour")))||(zbeul.estPresent(new Mot("salut")))){
 		return "De quoi veux-tu parler aujourd'hui ?";
 	}
 
