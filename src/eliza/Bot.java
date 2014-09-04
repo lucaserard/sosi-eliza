@@ -29,6 +29,10 @@ public class Bot{
 	    return res;
 	}
 	
+	if(zbeul.estPresent(new Mot("bonjour"))){
+		return "De quoi veux-tu parler aujourd'hui ?";
+	}
+
 
 	Mot sujet = trouverSujet(zbeul);
 	//System.out.println(sujet.getString()); /*fonctionne bien et renvois majoritairement des "ta mere"*/
@@ -61,7 +65,7 @@ public class Bot{
 	if(zbeul.estPresent(new Mot("tu"))||zbeul.estPresent(new Mot("t"))){
 	    return (new Mot("je"));
 	}
-	return new Mot("Ta mere");
+	return new Mot("");
     }
     
     private Boolean trouverOuiNon(Phrase zbeul){
