@@ -33,6 +33,9 @@ public class Bot{
 		return "De quoi veux-tu parler aujourd'hui ?";
 	}
 
+	if(zbeul.obtenirType()==Phrase.TypePhrase.INTERROGATIVE){
+		return "Pourquoi te poses-tu tant de questions ?";
+	}
 
 	Mot sujet = trouverSujet(zbeul);
 	//System.out.println(sujet.getString()); /*fonctionne bien et renvois majoritairement des "ta mere"*/
