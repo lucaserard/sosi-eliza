@@ -12,11 +12,17 @@ public class Bot{
     }
 
     public String trouverReponse(Phrase zbeul){
-	String  res= "Je comprend...";
-	
+    int i;
+    String res="";
+	i=(int)Math.round(Math.random()*3);
+	switch(i){
+		case 1 : res= "Je comprend...";
+		case 2 : res= "Je vois...";
+		case 3 : res= "D'accord !";
+	}
 	Boolean ouiNon = trouverOuiNon(zbeul);
 	
-	int i;
+	
 	
 	if (ouiNon){
 	    i=(int)Math.round(Math.random()*3);
@@ -47,17 +53,32 @@ public class Bot{
 	if((zbeul.obtenirType()==Phrase.TypePhrase.AFFIRMATIVE)&&( sujet.equals(new Mot("tu")) )){
 		Phrase rep = new Phrase('?');
 		Mot verbe = zbeul.obtenirMotSuivant(new Mot("je"));
-		verbe.ajouterCaractere('s');
-		i=(int)Math.round(Math.random()*4);
+		Mot nouveauVerbe;
+		if (verbe.getString().equals("suis")) {
+			nouveauVerbe= new Mot("es");
+		}else if (verbe.getString().equals("vais")){
+			nouveauVerbe= new Mot("vas");
+		}else {
+			verbe.ajouterCaractere('s');
+			nouveauVerbe=verbe;
+		}
+		i=(int)Math.round(Math.random()*5);
 		switch(i){
 			case 1 : rep.ajouterMot(new Mot("Pourquoi")); break;
 			case 2 : rep.ajouterMot(new Mot("Comment")); break;
 			case 3 : rep.ajouterMot(new Mot("Quand")); break;
 			case 4 : rep.ajouterMot(new Mot("A quelle fin")); break;
+			case 5 : rep.ajouterMot(new Mot("Depuis quand")); break;
 		}
-		rep.ajouterMot(verbe);
+		rep.ajouterMot(nouveauVerbe);
 		rep.ajouterMot(sujet);
 
+		//rajout des complements
+		Mot cpt=zbeul.obtenirMotSuivant(verbe);
+		while(cpt.getString()!=""){
+			rep.ajouterMot(cpt);
+			cpt=zbeul.obtenirMotSuivant(cpt);
+		}
 		return rep.toString();
 	}
 
