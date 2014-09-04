@@ -48,7 +48,13 @@ public class Bot{
 		Phrase rep = new Phrase('?');
 		Mot verbe = zbeul.obtenirMotSuivant(new Mot("je"));
 		verbe.ajouterCaractere('s');
-		rep.ajouterMot(new Mot("Pourquoi"));
+		i=(int)Math.round(Math.random()*4);
+		switch(i){
+			case 1 : rep.ajouterMot(new Mot("Pourquoi")); break;
+			case 2 : rep.ajouterMot(new Mot("Comment")); break;
+			case 3 : rep.ajouterMot(new Mot("Quand")); break;
+			case 4 : rep.ajouterMot(new Mot("A quelle fin")); break;
+		}
 		rep.ajouterMot(verbe);
 		rep.ajouterMot(sujet);
 
