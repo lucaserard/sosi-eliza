@@ -18,7 +18,7 @@ public class Bot{
 	switch(i){
 		case 1 : res= "Je comprend...";
 		case 2 : res= "Je vois...";
-		case 3 : res= "D'accord !";
+		case 3 : res= "D'accord ! Peux tu m'en dire plus ?";
 	}
 	Boolean ouiNon = trouverOuiNon(zbeul);
 	
@@ -40,7 +40,7 @@ public class Bot{
 	}
 
 	Mot sujet = trouverSujet(zbeul);
-	System.out.println(sujet.getString()); /*fonctionne bien et renvois majoritairement des "ta mere"*/
+	
 
 
 
